@@ -29,9 +29,8 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import {FFmpeg} from '@ffmpeg/ffmpeg'
-import type {LogEvent} from '@ffmpeg/ffmpeg/dist/esm/types'
 import {fetchFile, toBlobURL} from '@ffmpeg/util'
 import {defineComponent, ref} from 'vue'
 
@@ -75,7 +74,7 @@ export default defineComponent({
 
     async function transcode() {
       message.value = 'Loading ffmpeg-core.js'
-      ffmpeg.on('log', ({message: msg}: LogEvent) => {
+      ffmpeg.on('log', ({message: msg}) => {
         message.value = msg
       })
       await ffmpeg.load({
@@ -92,7 +91,7 @@ export default defineComponent({
 
       const data = await ffmpeg.readFile('test.mp3')
       console.log('written', data)
-      const transcodedBlob = new Blob([(data as Uint8Array).buffer], {type: 'audio/mpeg'});
+      const transcodedBlob = new Blob([(data).buffer], {type: 'audio/mpeg'});
       video.value = URL.createObjectURL(transcodedBlob)
 
       transcodedBlobInfo.value = {
