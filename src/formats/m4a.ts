@@ -1,5 +1,5 @@
-import {type AudioFormatOptions, createCommonFormat} from "@/formats/common";
-
+import {createCommonFormat} from "@/formats/common";
+import type {AudioFormatOptions} from "@/formats/interfaces";
 /**
  *
  * @param options

@@ -212,7 +212,7 @@ export interface AudioFormatOptions {
     sampleRate?: AudioSampleRate | number,
 
     /** Audio can be stereo or mono */
-    channels?: 'stereo' | 'mono' | 1 | 2,
+    channels?: 'stereo' | 'mono',
 
     /**
      * Volume options

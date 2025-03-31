@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import {transcode} from './convert';
+import {transcode} from './utils/convert';
 import {defineComponent, ref} from 'vue'
 import {createMp3Format} from "@/formats/mp3";
 import {createM4aFormat} from "@/formats/m4a";
